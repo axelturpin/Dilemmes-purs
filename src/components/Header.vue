@@ -7,7 +7,7 @@ export default{
 <template>
     <header>
         <div>
-            <router-link to="/">
+            <router-link to="/" class="router-link">
                 <img src="../../public/img/train-60.png" alt="">
                 <p>Accueil</p>
             </router-link>
@@ -17,7 +17,7 @@ export default{
             <p>(sans intérêts personnels)</p>
         </div>
         <div>
-            <router-link to="/paramètres">
+            <router-link to="/paramètres" class="router-link">
                 <img src="../../public/img/paramètres-60.png" alt="">
                 <p>paramètres</p>
             </router-link>
@@ -47,9 +47,16 @@ header{
     align-items: center;
 }
 .titre h1 {
-    font-size: 2.8rem;
+    font-size: 48px;
 }
 .titre p {
     font-size: 1.2rem;
+}
+.router-link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black
 }
 </style>
