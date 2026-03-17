@@ -1,17 +1,20 @@
 <script>
+import Footer from './components/Footer.vue';
+import Header from './components/Header.vue';
+export default{
+  components:{
+    Header,
+    Footer
+  }
+}
 
 
 </script>
 
 <template>
-  <nav>
-    <router-link to="/">Accueil</router-link>
-    <router-link to="/modes">Modes</router-link>
-    <router-link to="/facile">Facile</router-link>
-
-  </nav>
-
+  <Header></Header>
   <router-view/>
+  <Footer></Footer>
 </template>
 
 <style>
