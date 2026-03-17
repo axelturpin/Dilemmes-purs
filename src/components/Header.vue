@@ -59,4 +59,12 @@ header{
     text-decoration: none;
     color: black
 }
+@media (max-width: 768px) {
+.titre h1 {
+    font-size: 32px;
+}
+.titre p {
+    font-size: 1rem;
+}
+}
 </style>

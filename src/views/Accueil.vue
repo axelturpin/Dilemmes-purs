@@ -49,7 +49,7 @@ tuer un innocent est toujours aussi mal (-1) comparé à l’inaction (0) (subje
 <br>
 Note: Dans le dilemme du tramway classique par exemple: La probabilité que le train passe “p” (selon le temps qu’on reste sur la voie) à son importance, car si le risque est déjà important, on est moins responsable du mal qu’on fait en changeant de voie, donc changer de voie peut devenir moral ou immoral. Un argument opposé: de toute façon dans le dilemme le train passe. Mais si on regarde les extrêmes, p = 0.99 le mal est presque déjà fait contrairement au bien qui est à peine fait (probabilité de bien de 0.01 avant qu’on sache que le train passe), comparé à p = 0.01, où l’on fait presque tout le mal. Le respect est fait pour que ce soit pris en compte 
 <br><br>
-Il y a un mode Classique (Tous les 11 Dilemmes), un mode Niveaux (Facile, Normal, Difficile), chaque niveau à 4 ou 5 dilemmes et un mode Custom<br>
+Il y a un mode Classique (Tous les 11 Dilemmes), un mode Niveaux (Facile, Normal, Difficile), chaque niveau à 5 dilemmes et un mode Custom<br>
 Même en cas de “mauvaise” réponse dans le mode “Niveaux” on gagne des points, car c’est quand même très subjectif, le minimum de réussite par niveau est de 2 étoiles sur 5.<br>
     </p></div>
 </template>

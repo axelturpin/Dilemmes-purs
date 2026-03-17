@@ -17,6 +17,7 @@ export default{
 
 
 <template>
+<div class="vh">
     <h2>Modes de jeu</h2>
     <div class="modes">
         <div class="niveaux">
@@ -55,7 +56,7 @@ export default{
             </router-link>
         </div>
     </div>
-    <div class="footer"><Footer></Footer></div>
+</div>
 </template>
 
 <style>
@@ -67,11 +68,13 @@ export default{
 .modes{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .mode{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     background-color: #FEEAFF;
     width: 520px;
     height: 100px;
@@ -90,7 +93,21 @@ export default{
 .étoile{
     width: 50px;
 }
-.footer{
-    margin-bottom: -100px;
+.vh{
+    min-height: calc(100vh - 15vh - 12vh - 20px);
+}
+
+@media (max-width: 768px) {
+    .mode{
+        width: 320px;
+        height: 60px;
+        font-size: 16px;
+    }
+    .étoile{
+        width: 25px;
+    }
+    h2{
+        font-size: 2rem;
+    }
 }
 </style>
