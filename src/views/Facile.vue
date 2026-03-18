@@ -172,38 +172,68 @@ export default {
 
 .vie11 {
   position: absolute;
-  top: 55%;
-  left: 80%;
+  top: 80%;
+  left: 95%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .vie12 {
   position: absolute;
-  top: calc(55% - 7px);
-  left: calc(80% - 25px);
+  top: calc(80% - 7px);
+  left: calc(95% - 25px);
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .vie13 {
   position: absolute;
-  top: calc(55% - 2*7px);
-  left: calc(80% - 2*25px);
+  top: calc(80% - 2*7px);
+  left: calc(95% - 2*25px);
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .vie14 {
   position: absolute;
-  top: calc(55% - 3*7px);
-  left: calc(80% - 3*25px);
+  top: calc(80% - 3*7px);
+  left: calc(95% - 3*25px);
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .vie15 {
   position: absolute;
-  top: calc(55% - 4*7px);
-  left: calc(80% - 4*25px);
+  top: calc(80% - 4*7px);
+  left: calc(95% - 4*25px);
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .vie21{
     position: absolute;
-    top: 10%;
-    left: 80%;
+    top: 33%;
+    left: 95%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.vie22{
+    position: absolute;
+    top: calc(33% - 7px);
+    left: calc(95% - 25px);
+    transform: translateX(-50%) translateY(-50%);
+}
+.vie23{
+    position: absolute;
+    top: calc(33% - 2*7px);
+    left: calc(95% - 2*25px);
+    transform: translateX(-50%) translateY(-50%);
+}
+.vie24{
+    position: absolute;
+    top: calc(33% - 3*7px);
+    left: calc(95% - 3*25px);
+    transform: translateX(-50%) translateY(-50%);
+}
+.vie25{
+    position: absolute;
+    top: calc(33% - 4*7px);
+    left: calc(95% - 4*25px);
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .chien{
