@@ -62,11 +62,13 @@ Même en cas de “mauvaise” réponse dans le mode “Niveaux” on gagne des 
     justify-content: center;
     margin: 20px;
 }
+
 .introduction .p, .description .p {
     /* text-align: center; */
     width: 60vw;
     font-size: 24px;
 }
+
 .jouer{
     font-size: 36px;
     background-color: #FEEAFF;
@@ -74,11 +76,21 @@ Même en cas de “mauvaise” réponse dans le mode “Niveaux” on gagne des 
     margin: 10px;
     border-radius: 20px;
 }
+
 .div-jouer{
     display: flex;
     justify-content: center;
 }
+
 .underline{
     text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    .introduction .p, .description .p {
+    /* text-align: center; */
+    width: 100vw;
+    font-size: 20px;
+}
 }
 </style>

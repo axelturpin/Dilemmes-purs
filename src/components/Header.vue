@@ -31,6 +31,7 @@ export default{
     margin: 0px;
     box-sizing: border-box;
 }
+
 header{
     display: flex;
     justify-content: space-between;
@@ -41,17 +42,21 @@ header{
     text-decoration: none;
     color: black
 }
+
 .titre{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .titre h1 {
     font-size: 48px;
 }
+
 .titre p {
     font-size: 1.2rem;
 }
+
 .router-link{
     display: flex;
     flex-direction: column;
@@ -59,10 +64,12 @@ header{
     text-decoration: none;
     color: black
 }
+
 @media (max-width: 768px) {
 .titre h1 {
     font-size: 32px;
 }
+
 .titre p {
     font-size: 1rem;
 }

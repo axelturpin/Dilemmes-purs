@@ -22,11 +22,13 @@ export default{
 body{
   background-color: #FEFFE9;
 }
+
 h2{
     text-align: center;
     font-size: 36px;
     margin: 20px;
 }
+
 .center {
     display: flex;
     justify-content: center;

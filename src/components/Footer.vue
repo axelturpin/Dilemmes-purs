@@ -19,6 +19,7 @@ export default{
     margin: 0px;
     box-sizing: border-box;
 }
+
 footer{
     display: flex;
     flex-direction: column;

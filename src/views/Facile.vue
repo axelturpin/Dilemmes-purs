@@ -83,6 +83,7 @@ export default {
         <div class="plan-container">
         <a :href="dilemme.href"><img :src="dilemme.src_plan" class="img-rails" alt="rails" title="made at imgflip.com" loading="lazy">
         <div v-if="dilemme.voie1 > 0">
+            <img src="../../public/img/train.png" alt="train" class="train">
             <div v-for="n in dilemme.voie1">
                 <img src="../../public/img/personneHD1.png" alt="person" :class="'vie1' + n, dilemme.voie1_type" loading="lazy">
             </div>
@@ -117,71 +118,138 @@ export default {
     padding: 0px;
     box-sizing: border-box;
 }
+
 .p-description {
     white-space: pre-line; /* important : interprète les \n */
     font-size: 24px;
     width: 60vw;
     margin: 20px;
 }
+
 .btn{
     background-color: #FFECB9;
     padding: 10px 30px;
     margin: 30px;
     border-radius: 20px;
 }
+
 .détails, .score{
     text-align: center;
     white-space: pre-line;
     font-size: 22px;
 }
+
 .colonne{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .vie11{
     position: absolute;
     left: 1000px;
     top: 800px;
 }
+
+/* relative et absolute pour placer les images */
 .plan-container {
   position: relative;
-  width: max-content; /* ou 100% selon besoin */
 }
-.img-rails { display: block; width: 100%; }
+
+.train{
+    position: absolute;
+    top: -20%;
+    left: -30%;
+}
 
 .vie11 {
   position: absolute;
   top: 55%;
   left: 80%;
 }
+
 .vie12 {
   position: absolute;
   top: calc(55% - 7px);
   left: calc(80% - 25px);
 }
+
 .vie13 {
   position: absolute;
   top: calc(55% - 2*7px);
   left: calc(80% - 2*25px);
 }
+
 .vie14 {
   position: absolute;
   top: calc(55% - 3*7px);
   left: calc(80% - 3*25px);
 }
+
 .vie15 {
   position: absolute;
   top: calc(55% - 4*7px);
   left: calc(80% - 4*25px);
 }
+
 @media (max-width: 768px) {
-    .p-description {
-        width: auto;
-        font-size: 20px;
-    }
-    .img-rails{
-        width: 90vw;
-    }   
+
+.p-description, .détails {
+    width: auto;
+    font-size: 20px;
+}
+
+.img-rails{
+    width: 90vw;
+}   
+
+.train{
+    width: 500px;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+}
+
+.vie11 {
+    width: 100px;
+    position: absolute;
+    top: 55%;
+    left: 80%;
+}
+
+.vie12 {
+    width: 100px;
+    position: absolute;
+    top: calc(54% - 3px);
+    left: calc(80% - 12px);
+}
+
+.vie13 {
+    width: 100px;
+    position: absolute;
+    top: calc(54% - 2*3px);
+    left: calc(80% - 2*12px);
+}
+
+.vie14 {
+    width: 100px;
+    position: absolute;
+    top: calc(54% - 3*3px);
+    left: calc(80% - 3*12px);
+}
+
+.vie15 {
+    width: 100px;
+    position: absolute;
+    top: calc(54% - 4*3px);
+    left: calc(80% - 4*12px);
+}
+}
+
+@media (max-width: 1024px) {
+.p-description {
+    width: auto;
+    font-size: 20px;
+}
 }
 </style>
