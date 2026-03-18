@@ -238,7 +238,7 @@ export default {
 
 .chien{
     width: 200px;
-    margin-left: -20px;
+    margin-left: -40px;
 }
 
 
