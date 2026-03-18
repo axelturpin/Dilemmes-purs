@@ -17,6 +17,7 @@ export default{
   <Footer></Footer>
 </template>
 
+<!-- pas scoped donc s'applique a tous les composants -->
 <style>
 body{
   background-color: #FEFFE9;
