@@ -1,7 +1,7 @@
 {
     "dilemme1": 
     {
-        "description": "Soit 50% la probabilité de mourir par le train si on est sur une voie pendant 1 heure.  \nSoit une voie avec 5 personnes et une voie adjacente avec 1 chien, ces 6 vies vont rester ligotées sur la voie 1 heure en moyenne (avant que quelqu’un les enlève en théorie). \nLa probabilité importe même si le train arrive (voir Accueil) \n+Un train arrive sur la voie des 5 personnes, si on ne fait rien 5 personnes mourront. \n+On peut dévier le train sur l'autre voie, pour sauver 5 personnes mais 1 chien mourra.",
+        "description": "Soit 50% la probabilité de mourir par le train si on est sur une voie pendant 1 heure.  \nSoit une voie avec 5 personnes et une voie adjacente avec 1 chien qui ne peut pas bouger, ces 6 vies vont rester ligotées sur la voie 1 heure en moyenne (avant que quelqu’un les enlève en théorie). \nLa probabilité importe même si le train arrive (voir Accueil) \n+Un train arrive sur la voie des 5 personnes, si on ne fait rien 5 personnes mourront. \n+On peut dévier le train sur l'autre voie, pour sauver 5 personnes mais 1 chien mourra.",
         "bouton1": "Dévier",
         "bouton2": "Inaction",
         "Bon": "Dévier",

@@ -81,14 +81,22 @@ export default {
 
     <div class="center colonne">
         <div class="plan-container">
-        <a :href="dilemme.href"><img :src="dilemme.src_plan" class="img-rails" alt="rails" title="made at imgflip.com" loading="lazy">
-        <div v-if="dilemme.voie1 > 0">
-            <img src="../../public/img/train.png" alt="train" class="train">
-            <div v-for="n in dilemme.voie1">
-                <img src="../../public/img/personneHD1.png" alt="person" :class="'vie1' + n, dilemme.voie1_type" loading="lazy">
+            <a :href="dilemme.href"><img :src="dilemme.src_plan" class="img-rails" alt="rails" title="made at imgflip.com" loading="lazy">
+                <!-- train -->
+                <div v-if="dilemme.voie1 > 0">
+                    <img src="../../public/img/train.png" alt="train" class="train">
+                </div>
+                <!-- voie 1 -->
+                <div v-if="dilemme.voie1 > 0" v-for="n in dilemme.voie1">
+                    <img v-if="dilemme.voie2_type === 'chien'" src="../../public/img/personneHD1.png" alt="" loading="lazy" :class="'vie1' + n, dilemme.voie1_type">
+                    <img v-if="dilemme.voie2_type === 'person'" src="../../public/img/personneHD1.png" alt="" loading="lazy" :class="'vie1' + n, dilemme.voie1_type">
+                </div>
+                <!-- voie 2 -->
+            <div v-if="dilemme.voie2 > 0" class="voie2" v-for="n in dilemme.voie2">
+                <img v-if="dilemme.voie2_type === 'chien'" src="../../public/img/chien.png" alt="" loading="lazy" :class="'vie2' + n, dilemme.voie1_type" class="chien">
+                <img v-if="dilemme.voie2_type === 'person'" src="../../public/img/personneHD1.png" alt="" loading="lazy" :class="'vie2' + n, dilemme.voie1_type">
             </div>
-        </div>
-        </a>
+            </a>
         </div>
 
         <div><a href="https://imgflip.com/memegenerator">from Imgflip Meme Generator</a></div>
@@ -192,6 +200,18 @@ export default {
   left: calc(80% - 4*25px);
 }
 
+.vie21{
+    position: absolute;
+    top: 10%;
+    left: 80%;
+}
+
+.chien{
+    width: 200px;
+    margin-left: -20px;
+}
+
+
 @media (max-width: 768px) {
 
 .p-description, .détails {
@@ -206,45 +226,58 @@ export default {
 .train{
     width: 500px;
     position: absolute;
-    top: -50%;
+    top: -48%;
     left: -50%;
 }
 
 .vie11 {
     width: 100px;
     position: absolute;
-    top: 55%;
+    top: 52%;
     left: 80%;
 }
 
 .vie12 {
     width: 100px;
     position: absolute;
-    top: calc(54% - 3px);
+    top: calc(52% - 3px);
     left: calc(80% - 12px);
 }
 
 .vie13 {
     width: 100px;
     position: absolute;
-    top: calc(54% - 2*3px);
+    top: calc(52% - 2*3px);
     left: calc(80% - 2*12px);
 }
 
 .vie14 {
     width: 100px;
     position: absolute;
-    top: calc(54% - 3*3px);
+    top: calc(52% - 3*3px);
     left: calc(80% - 3*12px);
 }
 
 .vie15 {
     width: 100px;
     position: absolute;
-    top: calc(54% - 4*3px);
+    top: calc(52% - 4*3px);
     left: calc(80% - 4*12px);
 }
+
+.vie21{
+    width: 100px;
+    position: absolute;
+    top: 10%;
+    left: 80%;
 }
+
+/* .chien{
+    width: 80px;
+    margin-left: 0px;
+} */
+}
+
 
 @media (max-width: 1024px) {
 .p-description {
