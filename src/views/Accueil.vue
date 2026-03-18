@@ -3,9 +3,9 @@
 export default{
       data(){
         return{
-            introduction: `Ce site à pour but de se questionner sur des dilemmes éthiques sans intérêts personnels, et de donner des scores plus ou moins élevés selon une théorie qui se base sur l’intuition commune:<br>
-            Avec des mesures très subjectives de la mortalité (on peut ne pas être d'accord) si désaccord entre la formule et l’intuition commune, alors je me base sur l’intuition commune, par exemple pour les dilemmes des pilules, je donne des scores sans calculs de moralité)<br>
-            Cette théorie (le Finalitarisme) est causale, càd que si inaction alors la moralité M = 0 <br>
+            introduction: `Ce site à pour but de se questionner sur des dilemmes éthiques sans intérêts personnels, et de donner des scores plus ou moins élevés selon une théorie qui se base sur l’intuition commune:\n
+            Avec des mesures très subjectives de la mortalité (on peut ne pas être d'accord) si désaccord entre la formule et l’intuition commune, alors je me base sur l’intuition commune, par exemple pour les dilemmes des pilules, je donne des scores sans calculs de moralité)\n
+            Cette théorie (le Finalitarisme) est causale, càd que si inaction alors la moralité M = 0\n
             Plus d’information en dessous`,
         }
       } 
@@ -14,10 +14,10 @@ export default{
 
 <template>
     <h2>Accueil</h2>
-    <div class="introduction"><p v-html="introduction"></p></div>
+    <div class="introduction"><p class="p">{{ introduction }}</p></div>
     <div class="div-jouer"><router-link to="/modes"><button class="jouer">Jouer</button></router-link></div>
     <div class="description">
-        <p>
+        <p class="p">
         <span class="underline">Conséquentialisme:</span> (utilitarisme par exemple)<br>
 ensemble des théories morales qui soutiennent que ce sont les conséquences d'une action donnée qui doivent constituer la base de tout jugement moral de ladite action, par exemple on peut compter le nombre moyen de vies sauvées, ou la quantité de bonheur moins la quantité de malheur (utilitarisme).
 <br><br>
@@ -54,18 +54,15 @@ Même en cas de “mauvaise” réponse dans le mode “Niveaux” on gagne des 
     </p></div>
 </template>
 
-<style>
-h2{
-    text-align: center;
-    font-size: 36px;
-    margin: 20px;
-}
+<style scoped>
 .introduction, .description{
+    /* pour les sauts de ligne avec \n: */
+    white-space: pre-line;
     display: flex;
     justify-content: center;
     margin: 20px;
 }
-.introduction p, .description p {
+.introduction .p, .description .p {
     /* text-align: center; */
     width: 60vw;
     font-size: 24px;
