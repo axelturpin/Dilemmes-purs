@@ -4,7 +4,7 @@ export default{
     name: "Modes",
     data(){
         return{
-            étoiles_facile: 5,
+            étoiles_facile: Number(localStorage.getItem("étoiles_facile")) || 0,
             étoiles_normal: 2,
             étoiles_difficile: 0,
         }
@@ -21,22 +21,22 @@ export default{
             <router-link to="/facile" class="none">
                 <button class="mode">
                     Facile 
-                    <img src="../../public/img/etoile pleine.png" v-for="n in étoiles_facile" class="étoile" loading="lazy">
-                    <img src="../../public/img/etoile vide.png" v-for="n in (5-étoiles_facile)"  class="étoile" loading="lazy">
+                    <img src="../../public/img/etoile pleine.png" v-for="n in étoiles_facile" class="étoile" loading="lazy" :key="n">
+                    <img src="../../public/img/etoile vide.png" v-for="n in (5-étoiles_facile)"  class="étoile" loading="lazy" :key="n">
                 </button>
             </router-link>
             <router-link to="/normal" class="none">
                 <button class="mode">
                     Normal
-                    <img src="../../public/img/etoile pleine.png" v-for="n in étoiles_normal" class="étoile" loading="lazy">
-                    <img src="../../public/img/etoile vide.png" v-for="n in (5-étoiles_normal)" class="étoile" loading="lazy">
+                    <img src="../../public/img/etoile pleine.png" v-for="n in étoiles_normal" class="étoile" loading="lazy" :key="n">
+                    <img src="../../public/img/etoile vide.png" v-for="n in (5-étoiles_normal)" class="étoile" loading="lazy" :key="n">
                 </button>
             </router-link>
             <router-link to="/difficile" class="none">
                 <button class="mode">
                     Difficile
-                    <img src="../../public/img/etoile pleine.png" v-for="n in étoiles_difficile" class="étoile" loading="lazy">
-                    <img src="../../public/img/etoile vide.png" v-for="n in (5-étoiles_difficile)" class="étoile" loading="lazy">
+                    <img src="../../public/img/etoile pleine.png" v-for="n in étoiles_difficile" class="étoile" loading="lazy" :key="n">
+                    <img src="../../public/img/etoile vide.png" v-for="n in (5-étoiles_difficile)" class="étoile" loading="lazy" :key="n">
                 </button>
             </router-link>
 
@@ -67,6 +67,7 @@ export default{
     justify-content: center;
     flex-wrap: wrap;
 }
+
 .mode{
     display: flex;
     align-items: center;
@@ -80,6 +81,7 @@ export default{
     gap: 20px;
     border-radius: 20px;
 }
+
 .none{
     text-decoration: none;
 }
@@ -87,9 +89,7 @@ export default{
     display: flex;
     flex-direction: column;
 }
-.étoile{
-    width: 50px;
-}
+
 .vh{ 
     /* pour que le footer se mette en bas de l'écran */
     min-height: calc(100vh - 15vh - 12vh - 20px);

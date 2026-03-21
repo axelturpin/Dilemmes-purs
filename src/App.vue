@@ -33,4 +33,8 @@ h2{
     display: flex;
     justify-content: center;
 }
+
+.étoile{
+    width: 50px;
+}
 </style>

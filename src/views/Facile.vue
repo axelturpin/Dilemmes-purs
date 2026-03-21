@@ -8,6 +8,7 @@ export default {
       clicked: false,
       Détails: "",
       score: 0,
+      étoiles_facile: 0,
       numéro: 1,
       clickBtn1: false,
       clickBtn2: false,
@@ -15,7 +16,7 @@ export default {
   },
   methods: {
     click1(){
-        if (this.clicked === false){
+        if (!this.clicked){
             this.clicked = true;
             this.clickBtn1 = true;
             const btn = document.querySelector(".btn-1");
@@ -27,7 +28,11 @@ export default {
             voie2.forEach((vie, index) => {
                 vie.style.display = "none";
             });
-            }, 2000);
+            const train = document.querySelector(".train");
+            if(train){
+                train.style.display = "none";
+            }
+            }, 1900);
             
             if(this.dilemme.bouton1 === this.dilemme.Bon){
                 this.score += 100
@@ -37,7 +42,7 @@ export default {
         }
     },
     click2(){
-        if (this.clicked === false){
+        if (!this.clicked){
             this.clicked = true;
             this.clickBtn2 = true;
             const btn = document.querySelector(".btn-2");
@@ -49,7 +54,11 @@ export default {
             voie1.forEach((vie, index) => {
                 vie.style.display = "none";
             });
-            }, 2000);
+            const train = document.querySelector(".train");
+            if(train){
+                train.style.display = "none";
+            }
+            }, 1900);
             
             if(this.dilemme.bouton2 === this.dilemme.Bon){
                 this.score += 100
@@ -59,7 +68,7 @@ export default {
         }
     },
     chargement(){
-
+        // attendre que le DOM rende les éléments (v-if et v-for)
         this.$nextTick(() => {
             const screenWidth = window.innerWidth;
             const voie1 = document.querySelectorAll(".voie1");
@@ -68,7 +77,8 @@ export default {
             if (voie1.length === 0) {
                 console.warn("Aucun élément voie1 trouvé après rendu du DOM");
             }
-    
+            
+            //affichage des personnes (et/ou chiens)
             voie1.forEach((vie, index) => {
                 vie.style.display = "block";
                 vie.style.position = "absolute";
@@ -76,7 +86,7 @@ export default {
                 vie.style.left = `calc(95% - ${index*25}px)`;
                 vie.style.transform = "translate(-50%, -50%)";
                 if (screenWidth <= 768){
-                vie.style.top = `calc(80% - ${index*4}px)`;
+                vie.style.top = `calc(75% - ${index*4}px)`;
                 vie.style.left = `calc(95% - ${index*12}px)`;
                 }
             });
@@ -87,16 +97,96 @@ export default {
                 vie.style.top = `calc(33% - ${index*7}px)`;
                 vie.style.left = `calc(95% - ${index*25}px)`;
                 if (screenWidth <= 768){
-                vie.style.top = `calc(33% - ${index*4}px)`;
-                vie.style.left = `calc(95% - ${index*12}px)`;
+                    vie.style.top = `calc(33% - ${index*4}px)`;
+                    vie.style.left = `calc(95% - ${index*12}px)`;
                 }
                 vie.style.transform = "translate(-50%, -50%)";
             });
+            
+            
+            
+        //suppression des arbres des dilemmes précédents
+        const arbreAncien1 = document.querySelector(".arbre1");
+        const arbreAncien2 = document.querySelector(".arbre2");
+        if(arbreAncien1){
+            arbreAncien1.remove();
+        }
+        if(arbreAncien2){
+            arbreAncien2.remove();
+        }
+
+        //Affichage de nouveaux arbres si dans le dilemme
+        const container = document.querySelector(".plan-container");
+        if(this.dilemme.voie1_arbre){
+        var arbre1 = document.createElement("img");
+        arbre1.className = "arbre1";
+        arbre1.src = "/public/img/arbre.png";
+        arbre1.src = "/public/img/arbre.png"
+        arbre1.style.display = "block";
+        arbre1.style.position = "absolute";
+        arbre1.style.top = `calc(60%)`;
+        arbre1.style.left = `calc(70%)`;
+        arbre1.style.transform = "translate(-50%, -50%)";
+        if (screenWidth <= 768){
+            arbre1.style.width = "100px";
+            arbre1.style.top = `calc(65%)`;
+            arbre1.style.left = `calc(70%)`;
+        }
+        container.appendChild(arbre1);
+    }
+    if(this.dilemme.voie2_arbre){
+        var arbre2 = document.createElement("img");
+        arbre2.className = "arbre2";
+        arbre2.src = "/public/img/arbre.png";
+        arbre2.style.display = "block";
+        arbre2.style.position = "absolute";
+        arbre2.style.top = `calc(30%)`;
+        arbre2.style.left = `calc(70%)`;
+        arbre2.style.transform = "translate(-50%, -50%)";
+        if (screenWidth <= 768){
+        arbre2.style.width = "100px";
+        arbre2.style.top = `calc(35%)`;
+        arbre2.style.left = `calc(70%)`;
+        }
+        container.appendChild(arbre2);
+    }
+    
+    
             })
     },
     suivant(){
         if(this.numéro === 5){
             this.Détails = "Terminé";
+
+
+            let étoiles = localStorage.getItem("étoiles_facile_courrante");
+            localStorage.setItem("étoiles_facile_courrante", Math.floor(this.score/100).toString());
+            localStorage.setItem("étoiles_facile", Math.max(Math.floor(this.score/100), étoiles));
+            étoiles = localStorage.getItem("étoiles_facile_courrante");
+            console.log(Math.floor(this.score/100));
+            console.log(étoiles);
+            
+            this.étoiles_facile = Number(étoiles);
+
+            for(let i = 0; i < 5; i++){
+                const e = document.createElement("img");
+                e.className = "étoile";
+                e.loading = "lazy"
+                if (i < this.étoiles_facile){
+                    e.src = "../../public/img/etoile pleine.png"
+                } else{
+                    e.src="../../public/img/etoile vide.png"
+                }
+                const mode = document.querySelector(".mode");
+                mode.appendChild(e);
+            }
+
+            const position_étoiles = document.querySelectorAll("étoile");
+            position_étoiles.forEach((e, index) => {
+                e.style.position = relative;
+                e.sytle.left = `25% + ${index}*10%`;
+            })
+
         }else{
             this.numéro++;
             this.dilemme = this.data["dilemme" + (this.numéro).toString()];
@@ -109,6 +199,10 @@ export default {
             btn2.style.background = "#FFECB9";
 
             this.chargement();
+            if(this.numéro != 5){
+                const train = document.querySelector(".train");
+                train.style.display = "block"
+            }
         }
         const voie1 = document.querySelectorAll(".voie1");
         const voie2 = document.querySelectorAll(".voie2");
@@ -122,18 +216,25 @@ export default {
   },
   computed(){
     this.dilemme;
-    this.$nextTick;
+    this.étoiles_facile;
   },
   // après le chargement du composant
   async created() {
   try {
+      const audio = document.createElement("audio");
+      audio.src = "/public/audio/fond2.mp3";
+      audio.autoplay = true;
+      audio.loop = true;
+      const body = document.querySelector("body");
+      body.appendChild(audio);
+
     const response = await fetch('/public/json/facile.json');
     if (!response.ok) throw new Error('Erreur HTTP ' + response.status);
     const data = await response.json();
     this.data = data;
     this.dilemme = data.dilemme1;
 
-    //pour avoir le CSS au chargement, je reprends la fonction suivant, mai
+    //pour avoir le CSS au chargement, je reprends la fonction suivante:
     this.chargement();
 
   } catch (error) {
@@ -160,13 +261,13 @@ export default {
                 </div>
                 <!-- voie 1 -->
                 <div v-if="dilemme.voie1 > 0" v-for="n in dilemme.voie1">
-                    <img :key="n" v-if="dilemme.voie1_type === 'chien'" src="../../public/img/chien.png" alt="" loading="lazy" :class="'vie1' + n, dilemme.voie1_type"  class="chien voie1" >
-                    <img :key="n" v-if="dilemme.voie1_type === 'person'" src="../../public/img/personneHD1.png" alt="" loading="lazy" :class="'vie1' + n, dilemme.voie1_type" class="voie1">
+                    <img :key="n" v-if="dilemme.voie1_type === 'chien'" src="../../public/img/chien.png" alt="" loading="lazy" :class="dilemme.voie1_type"  class="voie1" >
+                    <img :key="n" v-if="dilemme.voie1_type === 'person'" src="../../public/img/personneHD1.png" alt="" loading="lazy" :class="dilemme.voie1_type" class="voie1">
                 </div>
                 <!-- voie 2 -->
             <div v-if="dilemme.voie2 > 0" v-for="n in dilemme.voie2">
-                <img :key="n" v-if="dilemme.voie2_type === 'chien'" src="../../public/img/chien.png" alt="" loading="lazy" :class="'vie2' + n, dilemme.voie2_type" class="chien voie2">
-                <img :key="n" v-if="dilemme.voie2_type === 'person'" src="../../public/img/personneHD1.png" alt="" loading="lazy" :class="'vie2' + n, dilemme.voie2_type" class="voie2">
+                <img :key="n" v-if="dilemme.voie2_type === 'chien'" src="../../public/img/chien.png" alt="" loading="lazy" :class="dilemme.voie2_type" class="voie2">
+                <img :key="n" v-if="dilemme.voie2_type === 'person'" src="../../public/img/personneHD1.png" alt="" loading="lazy" :class="dilemme.voie2_type" class="voie2">
             </div>
             </a>
         </div>
@@ -183,6 +284,13 @@ export default {
 
     <p class="score">Score total: {{ score }}</p>
     <p class="détails" v-if="clicked">{{ Détails }}</p>
+    <div class="center">
+        <!-- étoiles -->
+    <button class="mode" v-if="clicked && this.numéro === 5">
+        Facile 
+        <!-- img d'étoiles en js cette fois ci -->
+    </button>
+    </div>
     <div class="center">
         <button class="btn suivant" v-if="clicked" @click="suivant">Suivant</button>
     </div>
@@ -225,6 +333,25 @@ export default {
     align-items: center;
 }
 
+.mode{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: #FEEAFF;
+    width: 520px;
+    height: 100px;
+    font-size: 24px;
+    margin: 25px;
+    gap: 20px;
+    border-radius: 20px;
+}
+
+/* .position_étoiles{
+    display: flex;
+    justify-content: space-evenly;
+} */
+
 /* relative et absolute pour placer les images */
 .plan-container {
   position: relative;
@@ -232,6 +359,7 @@ export default {
 
 .train{
     position: absolute;
+    z-index: 2;
     top: -20%;
     left: -30%;
 }
@@ -288,7 +416,7 @@ export default {
 .train{
     width: 500px;
     position: absolute;
-    top: -48%;
+    top: -40%;
     left: -50%;
 }
 
@@ -298,6 +426,19 @@ export default {
 .voie2{
     width: 90px;
 }
+
+@keyframes animerTrain {
+  0%{
+    translate: 0px 0px;
+  }
+  50%{
+    translate: 100px 30px;
+  }
+  100%{
+    translate: 200px -20px;
+  }
+}
+
 }
 
 

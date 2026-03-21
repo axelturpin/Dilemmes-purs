@@ -59,7 +59,7 @@
     },
     "dilemme4": 
     {
-        "description": "Soit 50% la probabilité de mourir par le train si on est sur une voie pendant 1 heure \nSoit une voie avec 5 personnes et une voie adjacente avec 5 personnes mais un arbre devant pouvant faire dérailler le train avec une probabilité de 60%, ces 10 personnes vont rester ligotées sur la voie 1 heure en moyenne (avant que quelqu’un les enlève en théorie).\n +Un train arrive sur la voie des 5 personnes, si on ne fait rien 5 personnes mourront. \n+On peut dévier le train sur l'autre voie, pour sauver 5 personnes mais 5 personnes risquent de mourir.",
+        "description": "Soit 50% la probabilité de mourir par le train si on est sur une voie pendant 1 heure \nSoit une voie avec 5 personnes et une voie adjacente avec 5 personnes mais un arbre devant pouvant faire dérailler le train avec une probabilité de 60%, ces 10 personnes vont rester ligotées sur la voie 1 heure en moyenne (avant que quelqu’un les enlève en théorie).\n +Un train automatique (sans personnes) arrive sur la voie des 5 personnes, si on ne fait rien 5 personnes mourront. \n+On peut dévier le train sur l'autre voie, pour sauver 5 personnes mais 5 personnes risquent de mourir.",
         "bouton1": "Dévier",
         "bouton2": "Inaction",
         "Bon": "Dévier",
@@ -79,7 +79,7 @@
     },
     "dilemme3":
     {
-        "description": "Soit 50% la probabilité de mourir par le train si on est sur une voie pendant 1 heure\nSoit une voie avec 5 personnes mais un arbre devant pouvant faire dérailler le train avec une probabilité de 50% et une voie adjacente avec 2 personnes, ces 7 personnes vont rester ligotées sur la voie 1 heure en moyenne (avant que quelqu’un les enlève).\n+Un train arrive sur la voie des 5 personnes, si on ne fait rien 5 personnes mourront avec 50% de chances. \n+On peut dévier le train sur l'autre voie, pour sauver 5 personnes mais 2 personnes mourront.",
+        "description": "Soit 50% la probabilité de mourir par le train si on est sur une voie pendant 1 heure\nSoit une voie avec 5 personnes mais un arbre devant pouvant faire dérailler le train avec une probabilité de 50% et une voie adjacente avec 2 personnes, ces 7 personnes vont rester ligotées sur la voie 1 heure en moyenne (avant que quelqu’un les enlève).\n+Un train automatique (sans personnes) arrive sur la voie des 5 personnes, si on ne fait rien 5 personnes mourront avec 50% de chances. \n+On peut dévier le train sur l'autre voie, pour sauver 5 personnes mais 2 personnes mourront.",
         "bouton1": "Dévier",
         "bouton2": "Inaction",
         "Bon": "Inaction",
