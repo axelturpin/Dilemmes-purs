@@ -222,7 +222,7 @@ export default {
   async created() {
   try {
       const audio = document.createElement("audio");
-      audio.src = "/public/audio/fond2.mp3";
+      audio.src = "/public/audio/fondFacile.mp3";
       audio.autoplay = true;
       audio.loop = true;
       const body = document.querySelector("body");
