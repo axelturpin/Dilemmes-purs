@@ -9,6 +9,7 @@ export default {
       Détails: "",
       score: 0,
       étoiles_facile: 0,
+      afficher_étoiles: true,
       numéro: 1,
       clickBtn1: false,
       clickBtn2: false,
@@ -163,22 +164,23 @@ export default {
             localStorage.setItem("étoiles_facile_courrante", Math.floor(this.score/100).toString());
             localStorage.setItem("étoiles_facile", Math.max(Math.floor(this.score/100), étoiles));
             étoiles = localStorage.getItem("étoiles_facile_courrante");
-            console.log(Math.floor(this.score/100));
-            console.log(étoiles);
             
             this.étoiles_facile = Number(étoiles);
 
-            for(let i = 0; i < 5; i++){
-                const e = document.createElement("img");
-                e.className = "étoile";
-                e.loading = "lazy"
-                if (i < this.étoiles_facile){
-                    e.src = "../../public/img/etoile pleine.png"
-                } else{
-                    e.src="../../public/img/etoile vide.png"
+            if(this.afficher_étoiles){
+                for(let i = 0; i < 5; i++){
+                    const e = document.createElement("img");
+                    e.className = "étoile";
+                    e.loading = "lazy"
+                    if (i < this.étoiles_facile){
+                        e.src = "../../public/img/etoile pleine.png"
+                    } else{
+                        e.src="../../public/img/etoile vide.png"
+                    }
+                    const mode = document.querySelector(".mode");
+                    mode.appendChild(e);
                 }
-                const mode = document.querySelector(".mode");
-                mode.appendChild(e);
+                this.afficher_étoiles = false;
             }
 
             const position_étoiles = document.querySelectorAll("étoile");
