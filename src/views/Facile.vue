@@ -9,7 +9,8 @@ export default {
       Détails: "",
       score: 0,
       étoiles_facile: 0,
-      afficher_étoiles: true,
+      afficher_étoiles: false,
+      fin: false,
       numéro: 1,
       clickBtn1: false,
       clickBtn2: false,
@@ -167,7 +168,7 @@ export default {
             
             this.étoiles_facile = Number(étoiles);
 
-            if(this.afficher_étoiles){
+            if(!this.afficher_étoiles){
                 for(let i = 0; i < 5; i++){
                     const e = document.createElement("img");
                     e.className = "étoile";
@@ -180,14 +181,9 @@ export default {
                     const mode = document.querySelector(".mode");
                     mode.appendChild(e);
                 }
-                this.afficher_étoiles = false;
+                this.afficher_étoiles = true;
+                this.fin = true;
             }
-
-            const position_étoiles = document.querySelectorAll("étoile");
-            position_étoiles.forEach((e, index) => {
-                e.style.position = relative;
-                e.sytle.left = `25% + ${index}*10%`;
-            })
 
         }else{
             this.numéro++;
@@ -288,7 +284,7 @@ export default {
     <p class="détails" v-if="clicked">{{ Détails }}</p>
     <div class="center">
         <!-- étoiles -->
-    <button class="mode" v-if="clicked && this.numéro === 5">
+    <button class="mode" :class="{hidden: !fin}" >
         Facile 
         <!-- img d'étoiles en js cette fois ci -->
     </button>
@@ -394,8 +390,8 @@ export default {
   }
 }
 
-.voieHidden{
-  display: none;
+.hidden{
+    display: none;
 }
 
 .chien{
