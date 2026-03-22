@@ -73,12 +73,12 @@ export default{
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 10px;
     background-color: #FEEAFF;
     width: 520px;
     height: 100px;
     font-size: 24px;
     margin: 25px;
-    gap: 20px;
     border-radius: 20px;
 }
 
