@@ -1,0 +1,99 @@
+{
+    "dilemme1": 
+    {
+        "description": "Soit 50% la probabilité de mourir par le train si on est sur une voie pendant 1 heure\nSoit une voie avec 4 personnes et une voie adjacente avec 5 personnes mais un arbre devant pouvant faire dérailler le train avec une probabilité de 50%, ces 10 personnes vont rester ligotées sur la voie 1 heure en moyenne (avant que quelqu’un les enlève).\n+Un train arrive sur la voie des 5 personnes, si on ne fait rien 5 personnes mourront. \n+On peut dévier le train sur l'autre voie, pour sauver 5 personnes mais 5 personnes risquent de mourir.",
+        "bouton1": "Dévier",
+        "bouton2": "Inaction",
+        "Bon": "Dévier",
+        "Détails": "'Bon choix': Dévier le train (risque déjà présent pour p = 0.5, et respect plus grand car moins de risques à dévier le train, risque de déraillement de pd = 0.5) \nM(inaction) = 0, M(dévier) = 0.5 ",
+        "M": 0.5,
+        "M1": 0.5,
+        "M2": 0,
+        "src_plan": "./public/img/rails.png",
+        "href": "https://imgflip.com/i/al62xe",
+        "href_person": "https://imgflip.com/i/amxn79",
+        "voie1": 4,
+        "voie2": 5,
+        "voie1_type": "person",
+        "voie2_type": "person",
+        "voie1_arbre": false,
+        "voie2_arbre": true
+    },
+    "dilemme2": 
+    {
+        "description": "Soit 50% la probabilité de mourir par le train si on est sur une voie pendant 1 heure\nDilemme du tramway variante accident: quelqu’un est tombé accidentellement sur une voie et va être inconscient environ 1 heure sans train pour le moment, et 5 personnes se sont mises volontairement sur la voie adjacente, et veulent y rester pendant 1 heure sans savoir si un train allait passer ou non. \n+Un train arrive sur la voie de la personne tombée par accident, si on ne fait rien cette personne mourra. \n+On peut dévier le train sur l'autre voie, pour sauver cette personne mais 5 personnes qui ont pris le risque de mourir volontairement mourront.",
+        "bouton1": "Dévier",
+        "bouton2": "Inaction",
+        "Bon": "Inaction",
+        "Détails": "'Bon choix': Ne rien faire (pour p = 0.5, le risque pris intentionnellement n’est pas trop élevé, mais le devient, donc dévier est mieux pour p = 0.6 et plus) \nM(inaction) = 0, M(dévier) = -0.25",
+        "M": 0,
+        "M1": -0.25,
+        "M2": 0,
+        "src_plan": "./public/img/rails.png",
+        "href": "https://imgflip.com/i/al62xe",
+        "href_person": "https://imgflip.com/i/amxn79",
+        "voie1": 1,
+        "voie2": 5,
+        "voie1_type": "person",
+        "voie2_type": "voluntary person",
+        "voie1_arbre": false,
+        "voie2_arbre": false
+    },
+
+    "dilemme3":
+    {
+        "description": "Soit 50% la probabilité de mourir par le train si on est sur une voie pendant 1 heure.\nSoit 1 personne sur la voie qui va rester ligotée sur la voie 1 heure en moyenne (avant que quelqu’un l’enlève)\nUn tramway arrive sur 1 personne, mais des Aliens acceptent de le sauver contre brancher une autre personne (qui ne risque rien et n'est pas consentant) à la machine à expérience:\nDescription: La machine à expérience est une machine qui nous garde dans une simulation de pnj mais sans qu’on le sache, de plus la simulation est optimisée pour maximiser notre bonheur. On suppose que la liberté offerte par la machine à expérience est négligeable car virtuelle, mais que le bonheur est triplé\n+Accepter de céder une personne à la machine à expérience\n+Ne rien faire",
+        "bouton1": "Accepter",
+        "bouton2": "Inaction",
+        "Bon": "Accepter",
+        "Détails": "'Bon choix': Accepter \nM(inaction) = 0, M(accepter) = 0.25",
+        "M": 0.25,
+        "M1": 0.25,
+        "M2": 0,
+        "src_plan": "./public/img/rails-unique.png",
+        "href": "https://imgflip.com/i/al62xe",
+        "voie1_type": "person",
+        "voie2_type": "soucoupe",
+        "voie1": 5,
+        "voie2": 1,
+        "voie1_arbre": false,
+        "voie2_arbre": false
+    },
+
+    "dilemme4": 
+    {
+        "description": "50 personnes veulent en tuer une sans raison, en passant tous à l'acte en même temps, et aucun n’est forcé par les autres. \n+On peut ne rien faire, un innocent sera tué, ou \n+on peut tuer les 50 meurtriers pour sauver 1 personne",
+        "bouton1": "Tuer le gang",
+        "bouton2": "Inaction",
+        "Bon": "Tuer le gang",
+        "Détails": "'Bon choix': Les tuer (respect positif avec la notion d’empêchement) \nM(inaction) = 0, M(tuer) = 1",
+        "M": 1,
+        "M1": 1,
+        "M2": 0,
+        "src_plan": "https://i.imgflip.com/anca7f.jpg",
+        "href": "https://imgflip.com/i/anca7f",
+        "voie1": 0,
+        "voie2": 0,
+        "voie1_type": "person",
+        "voie2_type": "person",
+        "voie1_arbre": false,
+        "voie2_arbre": false
+    },
+    "dilemme5":
+    {
+        "description": "Soit un nombre pair de participant\nTu choisis une couleur, soit rouge, soit bleue: (comme les autres qui ont une couleur)\nBleue: Tout le monde est sauf si la majorité est bleue \nRouge: Tous ceux qui sont bleue meurt si la majorité absolue est rouge\nRien: tu meurs\n+Si il y a autant de bleus que de rouges, l’effet des bleu passe avant (si bleu majoritaire)",
+        "bouton1": "Bleu",
+        "bouton2": "Rouge",
+        "Bon": "Bleu",
+        "Détails": "'Bon choix': Bleue (le respect est plus grand, car on peut sauver les autres bleus, très subjectif)\nM(inaction) = 0, M(bleu) > M(rouge) > 0 les valeurs exactes dépendent du nombre de participants",
+        "M": 1,
+        "M1": 1,
+        "M2": 0.5,
+        "src_plan": "https://i.imgflip.com/alenyu.jpg",
+        "href": "https://imgflip.com/i/alenyu",
+        "voie1": 0,
+        "voie2": 0,
+        "voie1_arbre": false,
+        "voie2_arbre": false 
+    }
+}
