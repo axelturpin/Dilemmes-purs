@@ -1,0 +1,97 @@
+{
+    "dilemme1": 
+    {
+        "description": "Soit 50% la probabilité de mourir par le train si on est sur une voie pendant 1 heure\nSoit une voie avec 5 personnes et une voie adjacente avec 5 personnes mais un arbre devant pouvant faire dérailler le train avec une probabilité de 50%, ces 10 personnes vont rester ligotées sur la voie 1 heure en moyenne (avant que quelqu’un les enlève).\n+Un train automatique (sans personnes) arrive sur la voie des 5 personnes, si on ne fait rien 5 personnes mourront. \n+On peut dévier le train sur l'autre voie, pour sauver 5 personnes mais 5 personnes risquent de mourir.",
+        "bouton1": "Dévier",
+        "bouton2": "Inaction",
+        "Bon": "Dévier",
+        "Détails": "'Bon choix': Dévier le train (risque déjà présent pour p = 0.5, et respect plus grand car moins de risques à dévier le train, risque de déraillement de pd = 0.5)\nM(inaction) = 0, M(dévier) = 1.25 ",
+        "M": 1.25,
+        "M1": 1.25,
+        "M2": 0,
+        "src_plan": "./public/img/rails.png",
+        "href": "https://imgflip.com/i/al62xe",
+        "href_person": "https://imgflip.com/i/amxn79",
+        "voie1": 5,
+        "voie2": 5,
+        "voie1_type": "person",
+        "voie2_type": "person",
+        "voie1_arbre": false,
+        "voie2_arbre": true
+    },
+    "dilemme2": 
+    {
+        "description": "Soit 50% la probabilité de mourir par le train si on est sur une voie pendant 1 heure\nSoit une voie avec 5 personnes et une voie adjacente avec 2 personnes, ces 7 personnes vont rester ligotées sur la voie 1 heure en moyenne (avant que quelqu’un les enlève en théorie).\n+Un train arrive sur la voie des 5 personnes, si on ne fait rien 5 personnes mourront. \n+On peut dévier le train sur l'autre voie, pour sauver 5 personnes mais 2 personnes mourront.",
+        "bouton1": "Dévier",
+        "bouton2": "Inaction",
+        "Bon": "Dévier",
+        "Détails": "'Bon choix': Dévier le train (risque déjà important pour p = 0.5)\nM(inaction) = 0, M(Dévier) = 0.5 ",
+        "M": 0.5,
+        "M1": 0.5,
+        "M2": 0,
+        "src_plan": "./public/img/rails.png",
+        "href": "https://imgflip.com/i/al62xe",
+        "href_person": "https://imgflip.com/i/amxn79",
+        "voie1": 5,
+        "voie2": 2,
+        "voie1_type": "person",
+        "voie2_type": "person",
+        "voie1_arbre": false,
+        "voie2_arbre": false
+    },
+    "dilemme3":
+    {
+        "description": "Vous êtes médecin dans un hôpital où cinq patients sont gravement malades et mourront sans un traitement expérimental. Vous avez accès à un médicament qui pourrait sauver ces cinq patients, mais il doit être testé sur une personne saine. \n+Administrer ce médicament à une personne saine comporte un risque de 50 % de la tuer. +Sans ce test, les cinq patients mourront certainement. Que faites-vous ?",
+        "bouton1": "Administrer",
+        "bouton2": "Inaction",
+        "Bon": "Inaction",
+        "Détails": "'Bon choix': Ne rien faire (homme obèse en plus légé donc mal moins important, mais le respect reste null, c’est juste moins mal)\nSoit p = risque de mort\nM(inaction) = 0, M(administrer) = -p = -0.5",
+        "M": 0,
+        "M1": -0.5,
+        "M2": 0,
+        "src_plan": "https://i.imgflip.com/alptp6.jpg",
+        "href": "https://imgflip.com/i/alptp6",
+        "voie1_type": "person",
+        "voie2_type": "person",
+        "voie1": 0,
+        "voie2": 0,
+        "voie1_arbre": false,
+        "voie2_arbre": false
+    },
+    "dilemme4": 
+    {
+        "description": "50 personnes veulent en tuer une sans raison, en passant tous à l'acte en même temps, et aucun n’est forcé par les autres. \n+On peut ne rien faire, un innocent sera tué, ou \n+on peut tuer les 50 meurtriers pour sauver 1 personne",
+        "bouton1": "Tuer le gang",
+        "bouton2": "Inaction",
+        "Bon": "Tuer le gang",
+        "Détails": "'Bon choix': Les tuer (respect positif avec la notion d’empêchement) \nM(inaction) = 0, M(tuer) = 1",
+        "M": 1,
+        "M1": 1,
+        "M2": 0,
+        "src_plan": "https://i.imgflip.com/anca7f.jpg",
+        "href": "https://imgflip.com/i/anca7f",
+        "voie1": 0,
+        "voie2": 0,
+        "voie1_type": "person",
+        "voie2_type": "person",
+        "voie1_arbre": false,
+        "voie2_arbre": false
+    },
+    "dilemme5":
+    {
+        "description": "Soit un nombre pair de participant\nTu choisis une couleur, soit rouge, soit bleue: (comme les autres qui ont une couleur)\nBleue: Tout le monde est sauf si la majorité est bleue \nRouge: Tous ceux qui sont bleue meurt si la majorité absolue est rouge\nRien: tu meurs\n+Si il y a autant de bleus que de rouges, l’effet des bleu passe avant (si bleu majoritaire)",
+        "bouton1": "Bleu",
+        "bouton2": "Rouge",
+        "Bon": "Bleu",
+        "Détails": "'Bon choix': Bleue (le respect est plus grand, car on peut sauver les autres bleus, très subjectif)\nM(inaction) = 0, M(bleu) > M(rouge) > 0 les valeurs exactes dépendent du nombre de participants",
+        "M": 1,
+        "M1": 1,
+        "M2": 0.5,
+        "src_plan": "https://i.imgflip.com/alenyu.jpg",
+        "href": "https://imgflip.com/i/alenyu",
+        "voie1": 0,
+        "voie2": 0,
+        "voie1_arbre": false,
+        "voie2_arbre": false 
+    }
+}

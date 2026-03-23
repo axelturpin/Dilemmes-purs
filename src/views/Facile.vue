@@ -168,6 +168,7 @@ export default {
             
             this.étoiles_facile = Number(étoiles);
 
+            const screenWidth = window.innerWidth;
             if(!this.afficher_étoiles){
                 for(let i = 0; i < 5; i++){
                     const e = document.createElement("img");
@@ -177,6 +178,9 @@ export default {
                         e.src = "../../public/img/etoile pleine.png"
                     } else{
                         e.src="../../public/img/etoile vide.png"
+                    }
+                    if (screenWidth <= 768){
+                        e.style.width = "25px";
                     }
                     const mode = document.querySelector(".mode");
                     mode.appendChild(e);
@@ -218,6 +222,10 @@ export default {
   // après le chargement du composant
   async created() {
   try {
+    document.querySelectorAll("audio").forEach(e=>{
+        e.remove();
+    })
+
       const audio = document.createElement("audio");
       audio.src = "/public/audio/fondFacile.mp3";
       audio.autoplay = true;
@@ -301,7 +309,7 @@ export default {
 
 .p-description {
     white-space: pre-line; /* important : interprète les \n */
-    font-size: 24px;
+    font-size: 20px;
     width: 60vw;
     margin: 20px;
 }
@@ -316,7 +324,7 @@ export default {
 .détails, .score{
     text-align: center;
     white-space: pre-line;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .colonne{
@@ -334,16 +342,11 @@ export default {
     background-color: #FEEAFF;
     width: 520px;
     height: 100px;
-    font-size: 24px;
+    font-size: 20px;
     margin: 25px;
     gap: 20px;
     border-radius: 20px;
 }
-
-/* .position_étoiles{
-    display: flex;
-    justify-content: space-evenly;
-} */
 
 /* relative et absolute pour placer les images */
 .plan-container {
@@ -399,7 +402,7 @@ export default {
 
 .p-description, .détails {
     width: auto;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .img-rails{
@@ -420,6 +423,13 @@ export default {
     width: 90px;
 }
 
+.mode{
+    width: 320px;
+    height: 60px;
+    font-size: 16px;
+    gap: 5px;
+}
+
 @keyframes animerTrain {
   0%{
     translate: 0px 0px;
@@ -438,7 +448,7 @@ export default {
 @media (max-width: 1024px) {
 .p-description {
     width: auto;
-    font-size: 20px;
+    font-size: 18px;
 }
 }
 </style>

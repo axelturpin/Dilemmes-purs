@@ -5,8 +5,8 @@ export default{
     data(){
         return{
             étoiles_facile: Number(localStorage.getItem("étoiles_facile")) || 0,
-            étoiles_normal: 2,
-            étoiles_difficile: 0,
+            étoiles_normal: Number(localStorage.getItem("étoiles_normal")) || 0,
+            étoiles_difficile: Number(localStorage.getItem("étoiles_difficile")) || 0,
         }
     }
 }

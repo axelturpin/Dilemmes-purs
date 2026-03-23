@@ -10,10 +10,13 @@
                 const police = this.malvoyant ? "Luciole" : "Arial";
                 localStorage.setItem("font", police);
                 localStorage.setItem("malvoyant", JSON.stringify(this.malvoyant));
+                //prévenir l'application que la police a changé (optionnel)
+                window.dispatchEvent(new CustomEvent("font-changed", { detail: { police } }));
             }
         },
         mounted(){
-            
+            //optionnel
+            this.setPolice()
         }
     }
 </script>

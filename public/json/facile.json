@@ -40,22 +40,25 @@
         "voie1_arbre": false,
         "voie2_arbre": false
     },
-    "dilemme5":
+    "dilemme3":
     {
-        "description": "5 personnes risquent d’être écrasées par un train mais:\n+On peut pousser une personne obèse d’un pont pour faire dérailler le train et sauver les 5 autres. \n+Ou ne rien faire",
-        "bouton1": "Pousser",
+        "description": "Soit 50% la probabilité de mourir par le train si on est sur une voie pendant 1 heure\nSoit une voie avec 5 personnes mais un arbre devant pouvant faire dérailler le train avec une probabilité de 50% et une voie adjacente avec 2 personnes, ces 7 personnes vont rester ligotées sur la voie 1 heure en moyenne (avant que quelqu’un les enlève).\n+Un train automatique (sans personnes) arrive sur la voie des 5 personnes, si on ne fait rien 5 personnes mourront avec 50% de chances. \n+On peut dévier le train sur l'autre voie, pour sauver 5 personnes mais 2 personnes mourront.",
+        "bouton1": "Dévier",
         "bouton2": "Inaction",
         "Bon": "Inaction",
-        "Détails": "Ne rien faire (respect null) \nM(inaction) = 0, M(pousser) = -1",
+        "Détails": "C'est moins grave de laisser le train passer avec un arbre sur la 1e voie, car il y a beaucoup de chances qu'il ne tue personne \nM(inaction) = 0, M(dévier) = -2",
         "M": 0,
-        "M1": -1,
+        "M1": -2,
         "M2": 0,
-        "src_plan": "https://i.imgflip.com/amxkzy.jpg",
-        "href": "https://imgflip.com/i/amxkzy",
-        "voie1": 0,
-        "voie2": 0,
-        "voie1_arbre": false,
-        "voie2_arbre": false 
+        "src_plan": "./public/img/rails.png",
+        "href": "https://imgflip.com/i/al62xe",
+        "href_person": "https://imgflip.com/i/amxn79",
+        "voie1_type": "person",
+        "voie2_type": "person",
+        "voie1": 5,
+        "voie2": 2,
+        "voie1_arbre": true,
+        "voie2_arbre": false
     },
     "dilemme4": 
     {
@@ -77,24 +80,21 @@
         "voie1_arbre": false,
         "voie2_arbre": true
     },
-    "dilemme3":
+    "dilemme5":
     {
-        "description": "Soit 50% la probabilité de mourir par le train si on est sur une voie pendant 1 heure\nSoit une voie avec 5 personnes mais un arbre devant pouvant faire dérailler le train avec une probabilité de 50% et une voie adjacente avec 2 personnes, ces 7 personnes vont rester ligotées sur la voie 1 heure en moyenne (avant que quelqu’un les enlève).\n+Un train automatique (sans personnes) arrive sur la voie des 5 personnes, si on ne fait rien 5 personnes mourront avec 50% de chances. \n+On peut dévier le train sur l'autre voie, pour sauver 5 personnes mais 2 personnes mourront.",
-        "bouton1": "Dévier",
+        "description": "5 personnes risquent d’être écrasées par un train mais:\n+On peut pousser une personne obèse d’un pont pour faire dérailler le train et sauver les 5 autres. \n+Ou ne rien faire",
+        "bouton1": "Pousser",
         "bouton2": "Inaction",
         "Bon": "Inaction",
-        "Détails": "C'est moins grave de laisser le train passer avec un arbre sur la 1e voie, car il y a beaucoup de chances qu'il ne tue personne \nM(inaction) = 0, M(dévier) = -2",
+        "Détails": "Ne rien faire (respect null) \nM(inaction) = 0, M(pousser) = -1",
         "M": 0,
-        "M1": -2,
+        "M1": -1,
         "M2": 0,
-        "src_plan": "./public/img/rails.png",
-        "href": "https://imgflip.com/i/al62xe",
-        "href_person": "https://imgflip.com/i/amxn79",
-        "voie1_type": "person",
-        "voie2_type": "person",
-        "voie1": 5,
-        "voie2": 2,
-        "voie1_arbre": true,
-        "voie2_arbre": false
+        "src_plan": "https://i.imgflip.com/amxkzy.jpg",
+        "href": "https://imgflip.com/i/amxkzy",
+        "voie1": 0,
+        "voie2": 0,
+        "voie1_arbre": false,
+        "voie2_arbre": false 
     }
 }
