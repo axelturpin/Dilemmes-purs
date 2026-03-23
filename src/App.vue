@@ -5,6 +5,21 @@ export default{
   components:{
     Header,
     Footer
+  },
+  data(){
+    return{
+      // malvoyant: JSON.parse(localStorage.getItem("malvoyant")) || false,
+      police: localStorage.getItem("font")
+    }
+  },
+  mounted() {
+  //   if(this.malvoyant){
+  //     this.police = "Luciole";
+  //   }
+  //   else{
+  //     this.police = "Arial";
+  //   }
+  //   console.log(this.police);
   }
 }
 
@@ -19,6 +34,13 @@ export default{
 
 <!-- pas scoped donc s'applique a tous les composants -->
 <style>
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: v-bind(police);
+}
+
 body{
   background-color: #FEFFE9;
 }

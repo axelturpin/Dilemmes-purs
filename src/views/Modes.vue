@@ -57,11 +57,7 @@ export default{
 </template>
 
 <style scoped>
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
+
 .modes{
     display: flex;
     justify-content: center;

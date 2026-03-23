@@ -54,7 +54,7 @@ const roads = [
         component: Custom
     },
     {
-        path: "/paramètres",
+        path: "/parametres",
         name: "Paramètres",
         component: Paramètres
     },

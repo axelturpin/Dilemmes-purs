@@ -17,7 +17,7 @@ export default{
             <p>(sans intérêts personnels)</p>
         </div>
         <div>
-            <router-link to="/paramètres" class="router-link">
+            <router-link to="/parametres" class="router-link">
                 <img src="../../public/img/paramètres-60.png" alt="">
                 <p>paramètres</p>
             </router-link>

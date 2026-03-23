@@ -214,7 +214,6 @@ export default {
   },
   computed(){
     this.dilemme;
-    this.étoiles_facile;
   },
   // après le chargement du composant
   async created() {
@@ -299,11 +298,6 @@ export default {
 </template>
 
 <style scoped>
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
 
 .p-description {
     white-space: pre-line; /* important : interprète les \n */
