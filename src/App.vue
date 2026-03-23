@@ -8,18 +8,11 @@ export default{
   },
   data(){
     return{
-      // malvoyant: JSON.parse(localStorage.getItem("malvoyant")) || false,
-      police: localStorage.getItem("font")
+      police: localStorage.getItem("font") || "Arial"
     }
   },
   mounted() {
-  //   if(this.malvoyant){
-  //     this.police = "Luciole";
-  //   }
-  //   else{
-  //     this.police = "Arial";
-  //   }
-  //   console.log(this.police);
+
   }
 }
 
@@ -38,7 +31,7 @@ export default{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: v-bind(police);
+    font-family: v-bind(police), sans-serif;
 }
 
 body{
@@ -55,6 +48,7 @@ h2{
     display: flex;
     justify-content: center;
 }
+
 
 .étoile{
     width: 50px;
